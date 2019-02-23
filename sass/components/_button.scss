@@ -49,6 +49,16 @@
             background-color: $white;
         }
     }
+
+    &--green {
+        background-color: $medium-green;
+        color: $white;
+        padding: 1.5rem 4rem;
+
+        &:after{
+            background-color: $medium-green;
+        }
+    }
 }
 
 .btn-text {
