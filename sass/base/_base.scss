@@ -1,13 +1,27 @@
-*, *::after, *::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }
 html {
-    // this defines what 1rem is. By default the browsers font size is 16px, 62.5% is 10px. 1
-    // rem = 10px
-    font-size: 62.5%;
+  // this defines what 1rem is. By default the browsers font size is 16px, 62.5% is 10px. 1
+  // 1rem = 10px
+  font-size: 62.5%;
+
+  @include tab-land {
+    font-size: 56.25%; //1rem = 9px => 9/16 = 56.25%
+  }
+
+  @include tab-port {
+    font-size: 50%; //1rem = 8px => 8/16 = 50%
+  }
+
+  @include big-screen {
+    font-size: 75%; //1rem = 12px
+  }
 }
 body {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
