@@ -1,40 +1,66 @@
 .composition {
+  position: relative;
 
-    position: relative;
+  &__photo {
+    width: 55%;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.4);
+    border-radius: 2px;
+    position: absolute;
+    z-index: 0;
+    transition: all 0.2s;
+    outline-offset: 1rem;
 
-     &__photo {
-         width: 55%;
-         box-shadow: 0 1.5rem 4rem rgba($color-black, .4);
-         border-radius: 2px;
-         position: absolute;
-         z-index: 0;
-         transition: all .2s;
-         outline-offset: 1rem;
+    @include tab-port {
+      float: left;
+      position: relative;
+      width: 33.333333333%;
+      box-shadow: 0 1.5rem 3rem rgba($color-black, 0.2);
+    }
 
-         &--p1 {
-             left: 0;
-             top: -2rem;
-         }
+    &--p1 {
+      left: 0;
+      top: -2rem;
 
-         &--p2 {
-            right: 0;
-            top: 2rem;
-        }
+      @include tab-port {
+        top: 0;
+      }
+    }
 
-        &--p3 {
-            left: 20%;
-            top: 10rem;
-        }
+    &--p2 {
+      right: 0;
+      top: 2rem;
+      z-index: 1;
+      @include tab-port {
+        top: 0;
+        transform: scale(1.5);
+      }
+    }
 
-        &:hover {
-            transform: scale(1.05) translateY(-.5rem);
-            box-shadow: 0 2.5rem 4rem rgba($color-black, .5);
-            z-index: 1;
-            outline: 1.5rem solid $medium-green;
-        }
-     }
+    &--p3 {
+      left: 20%;
+      top: 10rem;
 
-     &:hover &__photo:not(:hover) {
-        transform: scale(.95);
-     }
+      @include tab-port {
+        left: 0;
+        top: 0;
+      }
+    }
+
+    &:hover {
+      transform: scale(1.05) translateY(-0.5rem);
+      box-shadow: 0 2.5rem 4rem rgba($color-black, 0.5);
+      z-index: 1;
+      outline: 1.5rem solid $medium-green;
+
+      @include tab-port {
+        transform: scale(2);
+        z-index: 2;
+        outline: initial;
+      }
+    }
+  }
+
+  &:hover &__photo:not(:hover) {
+    transform: scale(0.95);
+  }
 }

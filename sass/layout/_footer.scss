@@ -6,6 +6,10 @@
 
   &__logo-box {
     margin-bottom: 8rem;
+
+    @include tab-port {
+      margin-bottom: 5rem;
+    }
   }
 
   &__logo {
