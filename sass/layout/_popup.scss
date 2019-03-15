@@ -53,6 +53,12 @@
   &__left {
     width: 33.3333%;
     display: table-cell;
+
+    @include tab-port {
+      width: 100%;
+      display: block;
+      margin: 2rem auto;
+    }
   }
   &__right {
     width: 66.66666%;
@@ -60,10 +66,25 @@
     vertical-align: middle;
     padding: 3rem 5rem;
     font-size: 1.4rem;
+
+    @include tab-port {
+      width: 100%;
+      display: block;
+
+      .btn {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
   }
   &__image {
     display: block;
     width: 100%;
+
+    @include tab-port {
+      width: 60%;
+      margin: auto;
+    }
   }
   &__text {
     margin-bottom: 4rem;
